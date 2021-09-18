@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/screens/auth/Login/components/background.dart';
 import 'package:flutter_auth/screens/auth/Signup/signup_screen.dart';
@@ -6,6 +7,11 @@ import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_field.dart';
 import 'package:flutter_auth/components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
+
+Future fetchStr() async {
+  await new Future.delayed(const Duration(seconds: 5), () {});
+  return 'Hello World';
+}
 
 class Body extends StatelessWidget {
   const Body({
@@ -16,6 +22,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     var emailController = new TextEditingController();
+    var passwordController = new TextEditingController();
     return Background(
       child: SingleChildScrollView(
         child: Column(
@@ -37,6 +44,7 @@ class Body extends StatelessWidget {
               onChanged: (value) {},
             ),
             RoundedPasswordField(
+              controller: passwordController,
               onChanged: (value) {},
             ),
             RoundedButton(

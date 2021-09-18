@@ -11,6 +11,7 @@ import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
   TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -34,6 +35,7 @@ class Body extends StatelessWidget {
               onChanged: (value) {},
             ),
             RoundedPasswordField(
+              controller: passwordController,
               onChanged: (value) {},
             ),
             RoundedButton(
@@ -45,7 +47,7 @@ class Body extends StatelessWidget {
                   return AlertDialog(
                     // Retrieve the text the user has entered by using the
                     // TextEditingController.
-                    content: Text(emailController.text),
+                    content: Text(passwordController.text),
                   );
                 });
               },
