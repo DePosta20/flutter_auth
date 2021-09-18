@@ -15,6 +15,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    var emailController = new TextEditingController();
     return Background(
       child: SingleChildScrollView(
         child: Column(
@@ -31,6 +32,7 @@ class Body extends StatelessWidget {
             ),
             SizedBox(height: size.height * 0.03),
             RoundedInputField(
+              controller: emailController = new TextEditingController(),
               hintText: "Your Email",
               onChanged: (value) {},
             ),

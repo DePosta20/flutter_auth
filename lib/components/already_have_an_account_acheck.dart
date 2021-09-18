@@ -3,7 +3,7 @@ import 'package:flutter_auth/constants.dart';
 
 class AlreadyHaveAnAccountCheck extends StatelessWidget {
   final bool login;
-  final Function press;
+  final VoidCallback press;
   const AlreadyHaveAnAccountCheck({
     Key? key,
     this.login = true,
@@ -20,7 +20,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
           style: TextStyle(color: kPrimaryColor),
         ),
         GestureDetector(
-          onTap: press(),
+          onTap: press,
           child: Text(
             login ? "Sign Up" : "Sign In",
             style: TextStyle(
